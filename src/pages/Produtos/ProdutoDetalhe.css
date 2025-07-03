@@ -1,0 +1,15 @@
+.produto-detalhe {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.produto-detalhe img {
+  width: 100%;
+  max-width: 300px;
+}
+
+button[disabled] {
+  background-color: gray;
+  cursor: not-allowed;
+}

@@ -4,13 +4,12 @@ import "./Topbar.css";
 export default function Topbar() {
   return (
     <header className="topbar">
-      <div className="logo">Loja de Roupas</div>
+      <Link to="/" className="logo">Loja de Roupas</Link>
       <nav className="menu">
-        <Link to="/">Início</Link>
-        <Link to="/sobre">Sobre</Link>
-        <Link to="/produtos">Produtos</Link>
-        <Link to="/cadastro">Cadastro</Link>
         <Link to="/login">Login</Link>
+        <Link to="/cadastro">Cadastro</Link>
+        <Link to="/produtos">Produtos</Link>
+        <Link to="/sobre">Sobre</Link>
       </nav>
     </header>
   );

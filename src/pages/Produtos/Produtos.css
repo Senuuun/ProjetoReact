@@ -1,0 +1,19 @@
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.produto-card {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+}
+
+.produto-card img {
+  width: 100%;
+  height: auto;
+}

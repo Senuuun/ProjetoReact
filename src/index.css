@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Isso faz a div ocupar a tela inteira */
+}
+
+.main-content {
+  flex: 1; /* Isso faz o conteúdo crescer e empurrar o footer para baixo */
+}
