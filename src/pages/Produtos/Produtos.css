@@ -11,6 +11,7 @@
   border: 1px solid #ccc;
   padding: 1rem;
   text-align: center;
+  cursor: pointer;
 }
 
 .produto-card img {

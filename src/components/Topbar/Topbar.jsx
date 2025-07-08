@@ -4,7 +4,7 @@ import "./Topbar.css";
 export default function Topbar() {
   return (
     <header className="topbar">
-      <Link to="/" className="logo">Loja de Roupas</Link>
+      <Link to="/" className="logo">Supermercado Online</Link>
       <nav className="menu">
         <Link to="/login">Login</Link>
         <Link to="/cadastro">Cadastro</Link>

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Topbar/Topbar";
 import Footer from "./components/Footer/Footer";
+import PaymentLogin from "./components/PaymentLogin/PaymentLogin";
 
 import Home from "./pages/Home/Home";
 import Sobre from "./pages/Sobre/Sobre";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/produtos/:id" element={<ProdutoDetalhe />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/pagamento" element={<PaymentLogin />} />
         </Routes>
       </main>
 
@@ -32,3 +34,4 @@ function App() {
 }
 
 export default App;
+

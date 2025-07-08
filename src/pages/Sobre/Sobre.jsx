@@ -4,19 +4,16 @@ export default function Sobre() {
   return (
     <section className="sobre">
       <div className="container">
-        <h1>Sobre a Loja</h1>
+        <h1>Sobre o Supermercado Online</h1>
         <p>
-          A <strong>Loja de Roupas</strong> nasceu com o propósito de oferecer moda acessível,
-          confortável e sustentável para todas as pessoas. Buscamos sempre qualidade,
-          inovação e responsabilidade com o meio ambiente.
+          O <strong>Supermercado Online</strong> foi criado para tornar suas compras do dia a dia mais práticas, rápidas e seguras, com entrega direto na porta da sua casa.
         </p>
         <p>
-          Trabalhamos com fornecedores certificados e priorizamos tecidos recicláveis,
-          embalagens ecológicas e condições justas de trabalho.
+          Oferecemos uma ampla variedade de produtos: alimentos, bebidas, produtos de higiene, limpeza e muito mais.
+          Trabalhamos com fornecedores de confiança e buscamos sempre os melhores preços e qualidade.
         </p>
         <p>
-          Nosso objetivo é transformar a forma como você consome moda: com estilo,
-          consciência e confiança.
+          Nosso objetivo é facilitar sua rotina, economizar seu tempo e garantir que você receba tudo o que precisa com conforto e segurança.
         </p>
       </div>
     </section>

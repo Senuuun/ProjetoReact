@@ -1,10 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./ProdutoDetalhe.css";
 
 export default function ProdutoDetalhe() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [produto, setProduto] = useState(null);
+  const [pagamento, setPagamento] = useState(() => {
+    return JSON.parse(localStorage.getItem("pagamento"));
+  });
 
   useEffect(() => {
     const estoque = JSON.parse(localStorage.getItem("estoque")) || [];
@@ -13,6 +17,13 @@ export default function ProdutoDetalhe() {
   }, [id]);
 
   function comprarProduto() {
+    if (!pagamento) {
+      // salva o destino para retornar depois
+      localStorage.setItem("destinoCompra", window.location.pathname);
+      navigate("/pagamento");
+      return;
+    }
+
     const estoque = JSON.parse(localStorage.getItem("estoque"));
     const atualizado = estoque.map((p) =>
       p.id === produto.id && p.estoque > 0
@@ -21,7 +32,7 @@ export default function ProdutoDetalhe() {
     );
     localStorage.setItem("estoque", JSON.stringify(atualizado));
     setProduto((prev) => ({ ...prev, estoque: prev.estoque - 1 }));
-    alert("Produto comprado!");
+    alert("Compra realizada com sucesso!");
   }
 
   if (!produto) return <p>Produto não encontrado.</p>;

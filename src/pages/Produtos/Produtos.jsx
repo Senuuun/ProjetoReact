@@ -8,67 +8,67 @@ export default function Produtos() {
   const produtosIniciais = [
     {
       id: 1,
-      nome: "Sobretudo Masculino",
-      preco: 199.90,
-      estoque: 5,
-      imagem: "/imagens/sobretudo.jpg",
-      descricao: "Sobretudo de lã com corte clássico. Ideal para dias frios."
+      nome: "Arroz Branco Tipo 1 - 5kg",
+      preco: 23.49,
+      estoque: 30,
+      imagem: "/imagens/arroz.jpg",
+      descricao: "Arroz branco polido, ideal para o dia a dia. Pacote com 5kg."
     },
     {
       id: 2,
-      nome: "Camiseta Preta Básica",
-      preco: 49.90,
-      estoque: 10,
-      imagem: "/imagens/camiseta-preta.jpg",
-      descricao: "Camiseta de algodão confortável, ideal para o dia a dia."
+      nome: "Feijão Carioca - 1kg",
+      preco: 9.99,
+      estoque: 40,
+      imagem: "/imagens/feijao.jpg",
+      descricao: "Feijão carioca de alta qualidade, grãos selecionados."
     },
     {
       id: 3,
-      nome: "Calça Jeans Slim",
-      preco: 129.90,
-      estoque: 8,
-      imagem: "/imagens/calca-jeans.jpg",
-      descricao: "Calça jeans com modelagem slim. Versátil e moderna."
+      nome: "Óleo de Soja - 900ml",
+      preco: 7.89,
+      estoque: 50,
+      imagem: "/imagens/oleo.jpg",
+      descricao: "Óleo vegetal de soja, ideal para cozinhar e frituras."
     },
     {
       id: 4,
-      nome: "Vestido Floral Verão",
-      preco: 149.90,
-      estoque: 6,
-      imagem: "/imagens/vestido-floral.jpg",
-      descricao: "Vestido leve com estampa floral. Perfeito para dias quentes."
+      nome: "Leite Integral - 1L",
+      preco: 4.99,
+      estoque: 35,
+      imagem: "/imagens/leite.jpg",
+      descricao: "Leite integral pasteurizado, fonte de cálcio e vitaminas."
     },
     {
       id: 5,
-      nome: "Jaqueta Jeans Unissex",
-      preco: 179.90,
-      estoque: 3,
-      imagem: "/imagens/jaqueta-jeans.jpg",
-      descricao: "Jaqueta jeans moderna e estilosa, ideal para meia estação."
+      nome: "Pão de Forma Tradicional",
+      preco: 6.49,
+      estoque: 20,
+      imagem: "/imagens/pao.jpg",
+      descricao: "Pão de forma macio e saboroso, ideal para lanches."
     },
     {
       id: 6,
-      nome: "Blusa de Moletom",
-      preco: 99.90,
-      estoque: 7,
-      imagem: "/imagens/moletom.jpg",
-      descricao: "Moletom com capuz, confortável e quente para o inverno."
+      nome: "Sabonete Neutro - 90g",
+      preco: 2.49,
+      estoque: 60,
+      imagem: "/imagens/sabonete.jpg",
+      descricao: "Sabonete neutro para todos os tipos de pele. 90 gramas."
     },
     {
       id: 7,
-      nome: "Saia Midi",
-      preco: 89.90,
-      estoque: 5,
-      imagem: "/imagens/saia-midi.jpg",
-      descricao: "Saia midi elegante para looks mais formais ou casuais."
+      nome: "Detergente Líquido - 500ml",
+      preco: 3.29,
+      estoque: 45,
+      imagem: "/imagens/detergente.jpg",
+      descricao: "Detergente para louças com alto poder de limpeza."
     },
     {
       id: 8,
-      nome: "Camisa Social Branca",
-      preco: 109.90,
-      estoque: 4,
-      imagem: "/imagens/camisa-social.jpg",
-      descricao: "Camisa branca clássica para trabalho ou eventos."
+      nome: "Refrigerante Cola - 2L",
+      preco: 8.99,
+      estoque: 25,
+      imagem: "/imagens/refrigerante.jpg",
+      descricao: "Refrigerante sabor cola, embalagem de 2 litros."
     }
   ];
 
@@ -91,12 +91,15 @@ export default function Produtos() {
   return (
     <div className="produtos">
       {produtos.map((p) => (
-        <div className="produto-card" key={p.id}>
+        <div
+          className="produto-card"
+          key={p.id}
+          onClick={() => verDetalhes(p.id)}
+        >
           <img src={p.imagem} alt={p.nome} />
           <h3>{p.nome}</h3>
           <p>R$ {p.preco.toFixed(2)}</p>
           <p>Estoque: {p.estoque}</p>
-          <button onClick={() => verDetalhes(p.id)}>Ver Detalhes</button>
         </div>
       ))}
     </div>
