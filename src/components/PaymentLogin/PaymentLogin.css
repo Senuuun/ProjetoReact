@@ -11,8 +11,56 @@
   justify-content: center;
 }
 
+.pagamento-form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
 .pagamento-form {
-  background: white;
+  background-color: #f8f8f8;
   padding: 2rem;
   border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.pagamento-form h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.pagamento-form input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.linha-cartao {
+  display: flex;
+  gap: 1rem;
+}
+
+.linha-cartao input {
+  flex: 1;
+}
+
+.pagamento-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.pagamento-form button:hover {
+  background-color: #219150;
 }

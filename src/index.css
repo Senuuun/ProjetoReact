@@ -25,5 +25,5 @@ html, body, #root {
 }
 
 .main-content {
-  flex: 1; /* Isso faz o conteúdo crescer e empurrar o footer para baixo */
+  flex: 1; 
 }

@@ -14,13 +14,57 @@
   color: white;
 }
 
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .menu a {
-  margin-left: 1rem;
   text-decoration: none;
   color: white;
   transition: color 0.3s;
 }
 
 .menu a:hover {
-  color: #f1c40f;
+  color: #1abc9c;
+}
+
+.usuario-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.usuario-imagem {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ffffff22;
+  border: 2px solid #ccc;
+}
+
+.menu-popup {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  background-color: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.menu-popup button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e74c3c;
 }

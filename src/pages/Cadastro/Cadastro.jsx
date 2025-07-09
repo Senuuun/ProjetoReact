@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Cadastro.css";
 
 export default function Cadastro() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     nome: "",
     email: "",
@@ -49,29 +52,47 @@ export default function Cadastro() {
 
     usuarios.push(form);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    alert("Cadastro realizado com sucesso!");
 
-    setForm({
-      nome: "",
-      email: "",
-      senha: "",
-      cep: "",
-      endereco: "",
-      numeroDaCasa: "",
-      bairro: "",
-      cidade: "",
-      estado: "",
-    });
+    localStorage.setItem("usuarioLogado", JSON.stringify(form));
+
+    alert("Cadastro realizado com sucesso!");
+    navigate("/");
+    window.location.reload();
   }
 
   return (
     <form className="cadastro-form" onSubmit={handleSubmit}>
       <h2>Cadastro de Usuário</h2>
-
-      <input name="nome" placeholder="Nome" value={form.nome} onChange={handleChange} required />
-      <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required />
-      <input name="senha" type="password" placeholder="Senha" value={form.senha} onChange={handleChange} required />
-
+      <input
+        name="nome"
+        placeholder="Nome"
+        value={form.nome}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="email"
+        type="email"
+        placeholder="Email"
+        value={form.email}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="senha"
+        type="password"
+        placeholder="Senha"
+        value={form.senha}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="numeroDaCasa"
+        placeholder="Número da casa"
+        value={form.numeroDaCasa}
+        onChange={handleChange}
+        required
+      />
       <input
         name="cep"
         placeholder="CEP"
@@ -80,12 +101,37 @@ export default function Cadastro() {
         onBlur={(e) => buscarEndereco(e.target.value)}
         required
       />
-      <input name="endereco" placeholder="Endereço" value={form.endereco} onChange={handleChange} required />
-      <input name="numeroDaCasa" placeholder="Número da casa" value={form.numeroDaCasa} onChange={handleChange} required />
-      <input name="bairro" placeholder="Bairro" value={form.bairro} onChange={handleChange} required />
-      <input name="cidade" placeholder="Cidade" value={form.cidade} onChange={handleChange} required />
-      <input name="estado" placeholder="Estado" value={form.estado} onChange={handleChange} required />
 
+      <p class="cep-instrucoes">Se colocar o CEP, os campos abaixo serão preenchidos automaticamente:</p>
+
+      <input
+        name="endereco"
+        placeholder="Endereço"
+        value={form.endereco}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="bairro"
+        placeholder="Bairro"
+        value={form.bairro}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="cidade"
+        placeholder="Cidade"
+        value={form.cidade}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="estado"
+        placeholder="Estado"
+        value={form.estado}
+        onChange={handleChange}
+        required
+      />
       <button type="submit">Cadastrar</button>
     </form>
   );

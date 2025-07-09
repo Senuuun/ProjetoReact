@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
@@ -6,6 +7,8 @@ export default function Login() {
     email: "",
     senha: ""
   });
+
+  const navigate = useNavigate();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -24,8 +27,8 @@ export default function Login() {
     if (usuarioEncontrado) {
       localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
       alert("Login realizado com sucesso!");
-      // redirecionamento opcional
-      // window.location.href = "/";
+      navigate("/");
+      window.location.reload();
     } else {
       alert("Email ou senha incorretos.");
     }

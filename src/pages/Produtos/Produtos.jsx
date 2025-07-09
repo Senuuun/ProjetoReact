@@ -8,34 +8,34 @@ export default function Produtos() {
   const produtosIniciais = [
     {
       id: 1,
-      nome: "Arroz Branco Tipo 1 - 5kg",
+      nome: "Arroz Branco",
       preco: 23.49,
       estoque: 30,
-      imagem: "/imagens/arroz.jpg",
-      descricao: "Arroz branco polido, ideal para o dia a dia. Pacote com 5kg."
+      imagem: "/imagens/produtos/arroz.jpg",
+      descricao: "Arroz branco polido, ideal para o dia a dia."
     },
     {
       id: 2,
-      nome: "Feijão Carioca - 1kg",
+      nome: "Feijão Carioca",
       preco: 9.99,
       estoque: 40,
-      imagem: "/imagens/feijao.jpg",
+      imagem: "/imagens/produtos/feijao.jpg",
       descricao: "Feijão carioca de alta qualidade, grãos selecionados."
     },
     {
       id: 3,
-      nome: "Óleo de Soja - 900ml",
+      nome: "Vinagre - 750ml",
       preco: 7.89,
       estoque: 50,
-      imagem: "/imagens/oleo.jpg",
-      descricao: "Óleo vegetal de soja, ideal para cozinhar e frituras."
+      imagem: "/imagens/produtos/vinagre.jpg",
+      descricao: "Vinagre de maçã, ideal para cozinhar e frituras."
     },
     {
       id: 4,
-      nome: "Leite Integral - 1L",
+      nome: "Leite Integral",
       preco: 4.99,
       estoque: 35,
-      imagem: "/imagens/leite.jpg",
+      imagem: "/imagens/produtos/leite.jpg",
       descricao: "Leite integral pasteurizado, fonte de cálcio e vitaminas."
     },
     {
@@ -43,23 +43,23 @@ export default function Produtos() {
       nome: "Pão de Forma Tradicional",
       preco: 6.49,
       estoque: 20,
-      imagem: "/imagens/pao.jpg",
+      imagem: "/imagens/produtos/pao.jpg",
       descricao: "Pão de forma macio e saboroso, ideal para lanches."
     },
     {
       id: 6,
-      nome: "Sabonete Neutro - 90g",
+      nome: "Sabonete Neutro",
       preco: 2.49,
       estoque: 60,
-      imagem: "/imagens/sabonete.jpg",
-      descricao: "Sabonete neutro para todos os tipos de pele. 90 gramas."
+      imagem: "/imagens/produtos/sabonete.jpg",
+      descricao: "Sabonete neutro para todos os tipos de pele."
     },
     {
       id: 7,
-      nome: "Detergente Líquido - 500ml",
+      nome: "Detergente Líquido",
       preco: 3.29,
       estoque: 45,
-      imagem: "/imagens/detergente.jpg",
+      imagem: "/imagens/produtos/detergente.jpg",
       descricao: "Detergente para louças com alto poder de limpeza."
     },
     {
@@ -67,7 +67,7 @@ export default function Produtos() {
       nome: "Refrigerante Cola - 2L",
       preco: 8.99,
       estoque: 25,
-      imagem: "/imagens/refrigerante.jpg",
+      imagem: "/imagens/produtos/refrigerante.jpg",
       descricao: "Refrigerante sabor cola, embalagem de 2 litros."
     }
   ];

@@ -6,9 +6,6 @@ export default function ProdutoDetalhe() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [produto, setProduto] = useState(null);
-  const [pagamento, setPagamento] = useState(() => {
-    return JSON.parse(localStorage.getItem("pagamento"));
-  });
 
   useEffect(() => {
     const estoque = JSON.parse(localStorage.getItem("estoque")) || [];
@@ -17,19 +14,31 @@ export default function ProdutoDetalhe() {
   }, [id]);
 
   function comprarProduto() {
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+    const pagamento = JSON.parse(localStorage.getItem("dadosPagamento"));
+
+    if (!usuario) {
+      alert("Você deve estar registrado para fazer compra.");
+      localStorage.setItem("destinoCompra", window.location.pathname);
+      navigate("/login");
+      return;
+    }
+
     if (!pagamento) {
-      // salva o destino para retornar depois
+      alert("Você precisa fornecer um método de pagamento.");
+      localStorage.setItem("produtoParaCompra", JSON.stringify(produto));
       localStorage.setItem("destinoCompra", window.location.pathname);
       navigate("/pagamento");
       return;
     }
 
-    const estoque = JSON.parse(localStorage.getItem("estoque"));
+    const estoque = JSON.parse(localStorage.getItem("estoque")) || [];
     const atualizado = estoque.map((p) =>
       p.id === produto.id && p.estoque > 0
         ? { ...p, estoque: p.estoque - 1 }
         : p
     );
+
     localStorage.setItem("estoque", JSON.stringify(atualizado));
     setProduto((prev) => ({ ...prev, estoque: prev.estoque - 1 }));
     alert("Compra realizada com sucesso!");
@@ -50,3 +59,4 @@ export default function ProdutoDetalhe() {
     </div>
   );
 }
+
